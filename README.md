@@ -10,21 +10,6 @@ Required URL search parameters:
 - streamName -> Stream Name
 - publishingToken -> Publishing
 
----
-
-<fieldset>
-	<legend>Access the Demo</legend>
-	<form action="https://arbaz52.github.io/react-with-millicast/publisher" method="GET" target="__blank">
-		<label>Stream Name</label><br />
-		<input type="text" name="streamName"/><br />
-		<label>Publishing Token</label><br />
-		<input type="text" name="publishingToken"/><br />
-		<input type="submit" value="Take me to demo"><br />
-	</form>
-</fieldset>
-
----
-
 ### Create a broadcasting token
 
 Follow the steps to create a broadcasting token, if you do not have the required parameters.
