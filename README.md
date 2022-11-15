@@ -9,7 +9,7 @@ How to manage toggling of audio/video tracks.
 Required URL search parameters:
 
 - streamName -> Stream Name
-- publishingToken -> Publishing
+- publishingToken -> Publishing Token
 
 ### Create a broadcasting token
 
