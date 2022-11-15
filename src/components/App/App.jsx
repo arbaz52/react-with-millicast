@@ -1,4 +1,4 @@
-import { createBrowserRouter, HashRouter } from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { Box, ChakraProvider } from "@chakra-ui/react";
 
@@ -19,7 +19,7 @@ const router = createBrowserRouter([
 export const App = () => (
   <ChakraProvider>
     <Box w="100vw" h="100vh" overflow={"auto"} p={4}>
-      <HashRouter router={router} />
+      <RouterProvider router={router} />
     </Box>
   </ChakraProvider>
 );
