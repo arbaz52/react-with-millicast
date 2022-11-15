@@ -5,6 +5,7 @@ How to manage toggling of audio/video tracks.
 ## Demo
 
 **You need to have a millicast account in order to use the demo.**
+
 Required URL search parameters:
 
 - streamName -> Stream Name
