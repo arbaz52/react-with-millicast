@@ -1,17 +1,14 @@
-import {
-  Navigate,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import { Box, ChakraProvider } from "@chakra-ui/react";
 
+import { HomeRoute } from "@routes/HomeRoute/HomeRoute";
 import { PublisherRouteContainer } from "@routes/PublisherRoute/PublisherRoute.container";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Navigate to="/publisher" />,
+    element: <HomeRoute />,
   },
   {
     path: "/publisher",

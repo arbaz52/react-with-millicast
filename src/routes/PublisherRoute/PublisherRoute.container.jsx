@@ -40,7 +40,7 @@ export const PublisherRouteContainer = () => {
     setConnectionStatus(CONNECTION_STATUS.CONNECTING);
 
     toast({
-      title: "Starting broadcast...",
+      title: "Starting stream...",
     });
 
     navigator.mediaDevices
@@ -55,11 +55,18 @@ export const PublisherRouteContainer = () => {
           })
           .then(() => {
             toast({
-              title: "Broadcast started",
+              title: "Stream started",
             });
+            setConnectionStatus(CONNECTION_STATUS.CONNECTED);
+          })
+          .catch(() => {
+            toast({
+              status: "error",
+              title: "Cannot start streaming, please check millicast details",
+            });
+            setConnectionStatus(CONNECTION_STATUS.NOT_CONNECTED);
           })
           .finally(() => {
-            setConnectionStatus(CONNECTION_STATUS.CONNECTED);
             newStream.getTracks().forEach((track) => {
               track.stop();
             });
@@ -67,6 +74,13 @@ export const PublisherRouteContainer = () => {
               publishRef.current.webRTCPeer.replaceTrack(track);
             });
           });
+      })
+      .catch(() => {
+        toast({
+          status: "error",
+          title:
+            "Access to media devices is required in order to stream to millicast",
+        });
       });
   };
 
@@ -74,7 +88,7 @@ export const PublisherRouteContainer = () => {
     publishRef.current.stop();
     setConnectionStatus(CONNECTION_STATUS.NOT_CONNECTED);
     toast({
-      title: "Broadcast stopped",
+      title: "stream stopped",
     });
   };
 
